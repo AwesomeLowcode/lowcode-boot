@@ -1,0 +1,34 @@
+{
+  "name": "@ablula/lowcode-preset",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "scripts": {
+    "start": "build-scripts start",
+    "build": "build-scripts build --skip-demo",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mark.ck",
+  "dependencies": {
+    "react": "^17.x",
+    "react-dom": "^17.x",
+    "prop-types": "^15.5.8",
+    "@alifd/next": "^1.25.27",
+    "@alifd/theme-jinchan": "^0.1.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.1.0",
+    "@types/react": "^17.x",
+    "@alib/build-scripts": "^0.1.3",
+    "@alilc/lowcode-engine": "^1.0.15",
+    "build-plugin-component": "^1.12.0",
+    "@alilc/lowcode-engine-ext": "^1.0.5",
+    "tsconfig-paths-webpack-plugin": "^3.2.0"
+  }
+}
