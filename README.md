@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-import { setupWithAssets, LowcodePresetOptions } from '@ablula/lowcode-boot';
+import { start, LowcodePresetOptions } from '@ablula/lowcode-boot';
 
 const LCE_CONTAINER = document.getElementById('lce-container');
 
@@ -62,7 +62,7 @@ const DefaultSchema = {
   const schema = DefaultSchema;
 
 
-  await setupWithAssets({
+  await start({
     ...assets,
     extConfig: {
       customExt: {
