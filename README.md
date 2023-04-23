@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-import { setupWithAssets, LowcodePresetOptions } from '@ablula/lowcode-preset';
+import { setupWithAssets, LowcodePresetOptions } from '@ablula/lowcode-boot';
 
 const LCE_CONTAINER = document.getElementById('lce-container');
 

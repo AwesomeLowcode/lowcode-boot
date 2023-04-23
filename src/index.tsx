@@ -8,6 +8,8 @@ import { LowcodePresetOptions, Assets, CustomExt, AssetsExtConfig } from './type
 import registerDefaultPlugins from './plugins';
 import registerDefaultSetters from './setters';
 
+import { version } from '../package.json';
+
 import './index.scss';
 
 export * from '@alilc/lowcode-engine';
@@ -27,7 +29,7 @@ const initConfig = {
   ],
 };
 
-const setupWithInitCallback = async (customInit: IPublicTypePlugin, customExt: CustomExt, container: HTMLElement | null, options: LowcodePresetOptions) => {
+const startWithInitCallback = async (customInit: IPublicTypePlugin, customExt: CustomExt, container: HTMLElement | null, options: LowcodePresetOptions) => {
   const realConfig = { ...initConfig, ...(options || {})};
   const { pluginConfig, ...otherConfig } = realConfig;
   
@@ -50,9 +52,14 @@ const setupWithInitCallback = async (customInit: IPublicTypePlugin, customExt: C
   }
 
   init(container as HTMLElement, otherConfig);
+  console.log(
+    `%c AwesomeLowcodeBoot %c v${version} Started.`,
+    'padding: 2px 1px; border-radius: 3px 0 0 3px; color: #fff; background: #b37feb; font-weight: bold;',
+    'padding: 2px 1px; border-radius: 0 3px 3px 0; color: #fff; background: #42c02e; font-weight: bold;',
+  );
 }
 
-const setupWithAssets = async (assets: Assets, defaultSchema: IPublicTypeRootSchema, container: HTMLElement | null, options: LowcodePresetOptions) => {
+const start = async (assets: Assets, defaultSchema: IPublicTypeRootSchema, container: HTMLElement | null, options: LowcodePresetOptions) => {
 
   const { extConfig } = assets;
 
@@ -74,10 +81,10 @@ const setupWithAssets = async (assets: Assets, defaultSchema: IPublicTypeRootSch
   };
   customInit.pluginName = 'customInit';
 
-  await setupWithInitCallback(customInit, customExt, container, options);
+  await startWithInitCallback(customInit, customExt, container, options);
 
 }
 
-export { setupWithAssets, setupWithInitCallback };
+export { start, startWithInitCallback };
 
-export default setupWithInitCallback;
+export default start;

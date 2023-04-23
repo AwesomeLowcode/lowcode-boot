@@ -1,6 +1,6 @@
 {
-  "filename": "lowcode-preset",
-  "library": "AblulaLowcodePreset",
+  "filename": "lowcode-boot",
+  "library": "AwesomeLowcodeBoot",
   "libraryTarget": "umd",
   "sourceMap": true,
   "externals": {
