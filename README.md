@@ -53,27 +53,13 @@ const DefaultSchema = {
 
 
 (async function main() {
-  const assets = await (
-    await fetch(
-      `https://alifd.alicdn.com/npm/@alilc/lowcode-materials@1.1.0/build/lowcode/assets-prod.json`
-    )
-  ).json();
+
+  // assets 中包含 plugins 和 setters (assets.extConfig.customExt)，可动态插入
+  const assets = await (await fetch(`https://i.ablula.tech/npm/@ablula/lowcode-assets-jinchan@0.0.3/assets.json`)).json();
   
-  const schema = DefaultSchema;
+  const schema = await getPageSchema();
 
-
-  await start({
-    ...assets,
-    extConfig: {
-      customExt: {
-        urls: [
-          'https://i.ablula.tech/npm/@ablula/lowcode-ext-1@0.0.6/dist/lowcodeExt1.js',
-          'https://i.ablula.tech/npm/@ablula/lowcode-ext-1@0.0.6/dist/lowcodeExt1.css',
-        ],
-        library: 'AblulaLowcodeExt1'
-      }
-    }
-  }, schema, LCE_CONTAINER, config)
+  await start(assets, schema, LCE_CONTAINER, config)
 
 })();
 

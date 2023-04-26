@@ -13,6 +13,7 @@
     "prop-types": "PropTypes",
     "@alilc/lowcode-engine": "var window.AliLowCodeEngine",
     "@alilc/lowcode-engine-ext": "var window.AliLowCodeEngineExt",
+    "@alilc/lowcode-react-renderer": "var window.AliLowCodeReactRenderer",
     "@alilc/lowcode-editor-core": "var window.AliLowCodeEngine.common.editorCabin",
     "@alilc/lowcode-editor-skeleton": "var window.AliLowCodeEngine.common.skeletonCabin",
     "@alilc/lowcode-designer": "var window.AliLowCodeEngine.common.designerCabin"
